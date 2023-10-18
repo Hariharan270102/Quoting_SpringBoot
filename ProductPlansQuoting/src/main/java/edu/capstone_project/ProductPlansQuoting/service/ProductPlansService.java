@@ -98,6 +98,7 @@ public class ProductPlansService {
 	}
 
 	public ProductPlansResponse searchProduct(String planName) {
+		
 		return null;
 		
 		// TODO Auto-generated method stub
@@ -107,6 +108,32 @@ public class ProductPlansService {
 	public void deleteProduct(String planId) {
 		this.productPlansRepo.deleteByPlanId(planId);
 		// TODO Auto-generated method stub
+		
+	}
+
+	public void editProductPlan(ProductPlansRequest editProduct) {
+		System.out.println("from put service");
+		String planId=editProduct.getPlanId();
+		List<ProductPlans> ppl=new ArrayList<>();
+		ppl=productPlansRepo.findByPlanId(planId);
+		int s_no=ppl.get(0).getS_no();
+		System.out.println("s_no is: "+s_no);
+		ProductPlans productPlans=new ProductPlans();
+		productPlans.setS_no(s_no);
+		productPlans.setPlanId(editProduct.getPlanId());
+		productPlans.setPlanName(editProduct.getPlanName());
+		productPlans.setPlanPrice(editProduct.getPlanPrice());
+		productPlans.setPlanData(editProduct.getPlanData());
+		productPlans.setPlanCategory(editProduct.getPlanCategory());
+		productPlans.setPlanLocations(editProduct.getPlanLocations());
+		productPlans.setPlanSubscriptions(editProduct.getPlanSubscriptions());
+		productPlans.setPlanValidity(editProduct.getPlanValidity());
+		
+		productPlansRepo.save(productPlans);
+		System.out.println("edit success");
+		
+	
+		
 		
 	}
 	

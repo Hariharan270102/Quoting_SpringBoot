@@ -33,6 +33,8 @@ List<ProductPlans> findProductsByLocationAndCategory(
 	@Query("delete from ProductPlans where planId=?1")
 	 void deleteByPlanId(String planId);
 	 
+	 
+	 List<ProductPlans> findByPlanId(String planId);
 //	 @Query("from Product where pname like ?1%")
 //	 List<ProductPlans> findByPlanName(String planName);
 

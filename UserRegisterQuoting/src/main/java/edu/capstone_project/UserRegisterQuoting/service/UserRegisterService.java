@@ -44,7 +44,7 @@ public class UserRegisterService
 
 		}
 		LoginCredentials loginCredentials=LoginCredentials.builder().firstname(userObj.getFirstname()).
-				email(userObj.getEmail()).password(userObj.getPassword()).phonenumber(userObj.getPassword()).state(userObj.getState()).
+				email(userObj.getEmail()).password(userObj.getPassword()).phonenumber(userObj.getPhonenumber()).state(userObj.getState()).
 				build();
 		System.out.println(loginCredentials);
 		
