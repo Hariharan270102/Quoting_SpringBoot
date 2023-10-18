@@ -1,5 +1,8 @@
 package edu.capstone_project.UserRegisterQuoting.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import edu.capstone_project.UserRegisterQuoting.dto.UserRegisterRequest;
@@ -50,6 +53,16 @@ public class UserRegisterService
 		
 		// TODO Auto-generated method stub
 		return loginCredentials;
+	}
+
+	public String changeCredentials(String user_email, String password) {
+		System.out.println("from change pwd service");
+		UserRegister userRegister=new UserRegister();
+		userRegister=userRegisterRepo.findByEmail(user_email);
+		userRegister.setPassword(password);
+		userRegisterRepo.save(userRegister);
+		
+		return "Password updated successfully";
 	}
 
 	

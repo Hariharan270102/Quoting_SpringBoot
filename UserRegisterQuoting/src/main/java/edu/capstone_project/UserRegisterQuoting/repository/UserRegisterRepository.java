@@ -9,5 +9,6 @@ import edu.capstone_project.UserRegisterQuoting.model.UserRegister;
 public interface UserRegisterRepository extends JpaRepository<UserRegister, Integer> {
 	UserRegister findByEmail(String email);
 	UserRegister findByPhonenumber(String phonenumber);
+	
 
 }
