@@ -35,7 +35,7 @@ public class UserRegisterFrontController
 	
 	@PutMapping
 	@CrossOrigin(origins = "http://localhost:4200")
-	public String changePassword(@RequestBody Map<String,String> changeUserCredentials) {
+	public Boolean changePassword(@RequestBody Map<String,String> changeUserCredentials) {
 		System.out.println("from change pwd controller");
 		String user_email=changeUserCredentials.get("user_email");
 //		String user_email="gdrive05hari@gmail.com";

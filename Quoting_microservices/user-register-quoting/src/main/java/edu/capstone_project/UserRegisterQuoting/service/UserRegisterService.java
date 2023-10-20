@@ -60,14 +60,19 @@ public class UserRegisterService
 		return loginCredentials;
 	}
 
-	public String changeCredentials(String user_email, String password) {
+	public Boolean changeCredentials(String user_email, String password) {
 		System.out.println("from change pwd service");
 		UserRegister userRegister=new UserRegister();
 		userRegister=userRegisterRepo.findByEmail(user_email);
 		userRegister.setPassword(password);
-		userRegisterRepo.save(userRegister);
+		try {
+			userRegisterRepo.save(userRegister);
+		}
+		catch(Exception e) {
+			return false;
+		}
 		
-		return "Password updated successfully";
+		return true;
 	}
 
 	
