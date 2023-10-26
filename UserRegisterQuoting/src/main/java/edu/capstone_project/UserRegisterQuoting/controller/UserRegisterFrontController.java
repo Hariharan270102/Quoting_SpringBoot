@@ -49,7 +49,7 @@ public class UserRegisterFrontController
 	
 	@GetMapping
 	@CrossOrigin(origins = "http://localhost:4200")
-	public LoginCredentials getCredentials(@RequestParam String credentials) {
+	public LoginCredentials getCredentials(@RequestParam String credentials) throws Exception {
 		log.info(credentials);
 		return userRegService.getCredentials(credentials);
 	}
