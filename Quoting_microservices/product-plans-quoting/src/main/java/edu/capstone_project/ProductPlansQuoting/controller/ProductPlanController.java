@@ -61,9 +61,7 @@ public class ProductPlanController
 	@GetMapping("/location_category")
 	@CrossOrigin(origins = "http://localhost:4200")
 	public List<ProductPlansResponse> getProductsByLocationAndCategory(@RequestParam("selectedLocation") String selectedLocation,@RequestParam("selectedCategory") String selectedCategory) {
-		if("".equals(selectedCategory)) {
-			selectedCategory="NULL";
-		}
+		
 		return productPlansService.getProductsByLocationAndCategory(selectedLocation,selectedCategory);
 		
 		

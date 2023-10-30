@@ -59,10 +59,12 @@ public class UserRegisterService
 			userObj = userRegisterRepo.findByPhonenumber(credentials);
 
 		}
+		System.out.println(userObj);
 		String ipRegion=findLocationByIP();
 		System.out.println("after getting state from ip");
 		LoginCredentials loginCredentials=LoginCredentials.builder().firstname(userObj.getFirstname()).
-				email(userObj.getEmail()).password(userObj.getPassword()).phonenumber(userObj.getPhonenumber()).state(ipRegion).
+				email(userObj.getEmail()).password(userObj.getPassword()).
+				phonenumber(userObj.getPhonenumber()).state(ipRegion).
 				build();
 		System.out.println(loginCredentials);
 		
