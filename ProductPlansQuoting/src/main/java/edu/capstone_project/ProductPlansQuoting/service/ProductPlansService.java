@@ -104,9 +104,27 @@ public class ProductPlansService {
 		
 	}
 
-	public ProductPlansResponse searchProduct(String planName) {
+	public List<ProductPlansResponse> searchProduct(String planName) {
+		List<ProductPlans> pl=productPlansRepo.findByPlanNameContaining(planName);
+		System.out.println(pl);
+		List<ProductPlansResponse> ppr=new ArrayList<>();
+		for(ProductPlans i:pl) {
+			ProductPlansResponse productPlansResponse1=new ProductPlansResponse();
+			productPlansResponse1.setPlanId(i.getPlanId());
+			productPlansResponse1.setPlanName(i.getPlanName());
+			productPlansResponse1.setPlanPrice(i.getPlanPrice());
+			productPlansResponse1.setPlanValidity(i.getPlanValidity());
+			productPlansResponse1.setPlanData(i.getPlanData());
+			productPlansResponse1.setPlanCategory(i.getPlanCategory());
+			productPlansResponse1.setPlanSubscriptions(i.getPlanSubscriptions());
+			productPlansResponse1.setPlanLocations(i.getPlanLocations());
+			ppr.add(productPlansResponse1);
+			
+		}
+		return ppr;
 		
-		return null;
+		
+		
 		
 		// TODO Auto-generated method stub
 		

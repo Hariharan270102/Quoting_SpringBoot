@@ -14,6 +14,10 @@ import edu.capstone_project.ProductPlansQuoting.model.Locations;
 
 
 public interface ProductPlansRepository extends JpaRepository<ProductPlans, Integer> {
+	
+	//search product
+		List<ProductPlans> findByPlanNameContaining(String searchProduct);
+	
 //	 @Query(value = "SELECT Distinct productplans.* FROM product_plans productplans " +
 //             "INNER JOIN product_plans_plan_subscriptions planSubscriptions ON productplans.s_no = planSubscriptions.product_plans_s_no " +
 //             "INNER JOIN product_plans_plan_locations planLocations ON productplans.s_no = planLocations.product_plans_s_no " +

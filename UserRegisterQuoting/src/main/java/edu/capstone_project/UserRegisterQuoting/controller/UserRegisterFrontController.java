@@ -53,5 +53,18 @@ public class UserRegisterFrontController
 		log.info(credentials);
 		return userRegService.getCredentials(credentials);
 	}
+	
+//	@GetMapping("/check")
+//	@CrossOrigin(origins = "http://localhost:4200")
+//	public Boolean checkCredentials(@RequestParam String username,@RequestParam String password) throws Exception {
+//		
+//		return userRegService.checkCredentials(username,password);
+//		
+//	}
+//	
+
+	
+
+	
 
 }

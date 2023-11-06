@@ -114,6 +114,27 @@ public class UserRegisterService
 		return "Password updated successfully";
 	}
 
+	//testing not used anywhere as now
+//	public Boolean checkCredentials(String credentials,String password) {
+//		// TODO Auto-generated method stub
+//		UserRegister userObj=new UserRegister();
+//		if(credentials.contains("@")) {
+//			userObj = userRegisterRepo.findByEmail(credentials);
+//
+//		}
+//		else {
+//			userObj = userRegisterRepo.findByPhonenumber(credentials);
+//
+//		}
+//		if(userObj.getPassword().equals(password)) {
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//		
+//	}
+
 	
 
 }
