@@ -77,7 +77,7 @@ public class ProductPlansService {
 		ProductPlansResponse productPlansResponse=new ProductPlansResponse();
 		List<ProductPlansResponse> responseList=new ArrayList<>();
 		List<ProductPlans> ppl=new ArrayList<>();
-		if(selectedCategory.equals("any")) {
+		if(selectedCategory.equals("any")||selectedCategory.equals("NULL")) {
 			ppl=productPlansRepo.findProductsByLocation(selectedLocation);
 			System.out.println("boooooooo"+ppl);
 		}
