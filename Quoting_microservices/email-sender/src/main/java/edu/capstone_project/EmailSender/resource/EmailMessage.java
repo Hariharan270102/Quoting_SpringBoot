@@ -28,7 +28,7 @@ public class EmailMessage {
 
 		                + "<p style='font-size: 16px;'>Dear User,</p>"
 
-		                + "<p style='font-size: 16px;'>Please enter the otp to change yout password</p>"
+		                + "<p style='font-size: 16px;'>Please enter the otp to change your password</p>"
 		                
 		                + "<p style='font-size: 16px;'>Your OTP is : "+this.otp+" </p>"
 
